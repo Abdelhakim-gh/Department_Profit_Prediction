@@ -1,0 +1,33 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Prediction</title>
+</head>
+
+<body>
+    <h1>Profit Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="RnD_Spend">R&D Spend:</label>
+        <input type="text" id="RnD_Spend" name="RnD_Spend"><br><br>
+        <label for="Administration">Administration:</label>
+        <input type="text" id="Administration" name="Administration"><br><br>
+        <label for="Marketing_Spend">Marketing Spend:</label>
+        <input type="text" id="Marketing_Spend" name="Marketing_Spend"><br><br>
+        <label for="State">State:</label>
+        <select id="State" name="State">
+            <option value="New York">New York</option>
+            <option value="California">California</option>
+            <option value="Florida">Florida</option>
+        </select><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+
+</html>
